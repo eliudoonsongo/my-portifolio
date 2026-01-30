@@ -57,3 +57,12 @@ document.querySelectorAll('.card').forEach(card => {
   card.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
   observer.observe(card);
 });
+
+// Register service worker for PWA installability and offline support
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js')
+      .then(reg => console.log('Service Worker registered:', reg))
+      .catch(err => console.error('Service Worker registration failed:', err));
+  });
+}
