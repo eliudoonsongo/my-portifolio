@@ -5,8 +5,11 @@ const PRECACHE_URLS = [
   './styles.css',
   './script.js',
   './manifest.json',
+  './icons/icon-192.png',
+  './icons/icon-512.png',
   './icons/icon-192.svg',
-  './icons/icon-512.svg'
+  './icons/icon-512.svg',
+  './offline.html'
 ];
 
 self.addEventListener('install', event => {
@@ -38,8 +41,9 @@ self.addEventListener('fetch', event => {
           return response;
         });
       }).catch(() => {
+        // If navigation request fails (offline), serve the offline fallback.
         if (event.request.mode === 'navigate') {
-          return caches.match('./index.html');
+          return caches.match('./offline.html') || caches.match('./index.html');
         }
       });
     })
