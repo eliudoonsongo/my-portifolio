@@ -27,6 +27,19 @@ HTML5, CSS3, JavaScript, Node.js, Express, MongoDB, SQL, Git, GitHub, NPM
 1. Clone or download the repository.
 2. Open `index.html` in your browser to view the site.
 
+## Deployment
+
+This portfolio is ready to deploy to multiple platforms:
+
+- **Azure Static Web Apps** — Free hosting with global CDN and automatic SSL
+- **GitHub Pages** — Quick deployment directly from GitHub
+- **Netlify** — Drag & drop or Git integration  
+- **Vercel** — One-command deployment
+
+See [DEPLOY.md](DEPLOY.md) for detailed instructions for each platform.
+
+## Local Development
+
 Optional: serve locally to test relative assets and fetches:
 
 For Python 3:
